@@ -1,0 +1,14 @@
+{
+    "name": "devwp/foce-child",
+    "autoload": {
+        "psr-4": {
+            "Devwp\\FoceChild\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "devwp"
+        }
+    ],
+    "require": {}
+}
