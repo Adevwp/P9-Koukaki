@@ -1,9 +1,9 @@
-body {
-  background: black;
-}
-
 h2 {
   color: red;
+}
+
+h2.oscars-title {
+  color: black;
 }
 
 /*# sourceMappingURL=style.css.map */
