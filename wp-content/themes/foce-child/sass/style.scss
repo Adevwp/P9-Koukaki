@@ -1,9 +1,84 @@
-h2 {
-    color: red;
+
+/* scroll fade in section */
+
+//Apparition des sections et des titres
+
+.fadeIn {
+  animation: slidein 1s ease-in;
 }
 
-// Oscars section
+@keyframes slidein {
+  0% {
+    transform: translateY(30%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+.titleSectionAnimation {
+  display: inline-block;
+  margin-right: 15px;
+  opacity: 0;
+  transform: translateY(100%);
+
+  transition: opacity 0.2s ease-in, transform 0.5s ease-in;
+
+  &.visibility {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Rotating flowers */
+    // use keyframe to define stepf of animation rotate from 0 to 360 for a complete rotation
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+    }
+  to {
+    transform: rotate(360deg);
+    }
+}
+  // select all the flower from the style.css parent theme
+.site-footer::after,
+.site-footer ul::after,
+.site-footer::before,
+.story__article::after,
+.story h2::after,
+#studio h2::before,
+#studio h2::after {
+  animation: rotate 20s infinite linear; // 20s for the complete rotation in infinite duration
+}
+
+.story h2::after { // change size of the flower for center with her stem
+  width: 155px;
+  height: 155px;
+} 
+
+
+
+/* Oscars section */
+#oscars {
+  display: flex;
+  width: 965px;
+  margin-left: 200px;
+  margin-bottom: 160px;
+
+  img {
+    margin-top: 50px;
+    width: 278px;
+    height: 129px;
+    }
+  }
+
 
 h2.oscars-title {
-  color: black;
-  }
+  font-size: 2.2rem;
+  padding: 1.8em 2em;
+  background-image: url(../assets/images/oscar-title-backgroung.png);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
