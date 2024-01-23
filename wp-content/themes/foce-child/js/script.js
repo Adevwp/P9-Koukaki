@@ -5,7 +5,7 @@ const sectionApparitionObserver = new IntersectionObserver(function (entries, ob
         if (entry.isIntersecting) {
             entry.target.classList.add('fadeIn');
 
-            // Apparition effet for title section
+            // Apparition effect for title section
             
             const titleSection = entry.target.querySelector('h2, h3');
 
@@ -43,3 +43,42 @@ for (let i = 0; i < sections.length; i++) {
     const section = sections[i];
     sectionApparitionObserver.observe(section);
 }
+
+// Parallax effect on hero header
+ /* TODO à retravailler
+document.addEventListener('DOMContentLoaded', function () {
+    const video = document.querySelector('.video-koukaki');
+  
+    new simpleParallax(video, {
+        orientation: 'left',
+        scale: 1.2,
+        delay: 0.5,
+        transition: 'ease-in-out'
+    });
+  }); */ 
+
+  // Swiper js with coverflow for characters presentation TODO à compléter
+  const swiper = new Swiper('.swiper', {
+    speed: 1000,
+    spaceBetween: 100,
+    direction: 'horizontal',
+    centeredSlides: true,
+    slidesPerView: "auto",
+    autoplay: {
+        delay: 5000, /*duration betwenn each slide*/
+        disableOnInteraction: false,
+    },
+    loop: true,
+    loopedSlides: 2,
+    loopAdditionalSlides: 1,
+    effect: "coverflow",
+    coverflowEffect: {
+        slideShadows: false,
+        rotate: 0, 
+        stretch: 60, /* à*/
+        depth: 200, /* 50*/
+        /*modifier: 1 */
+    },
+  });
+
+  swiper.slideNext();
