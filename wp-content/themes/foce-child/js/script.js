@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Swiper js with coverflow for characters presentation TODO à compléter
   const swiper = new Swiper('.swiper', {
-    speed: 1000,
+    speed: 500,
     spaceBetween: 100,
     direction: 'horizontal',
     centeredSlides: true,
@@ -69,16 +69,52 @@ document.addEventListener('DOMContentLoaded', function () {
         disableOnInteraction: false,
     },
     loop: true,
-    loopedSlides: 2,
-    loopAdditionalSlides: 1,
+    /*loopedSlides: 2,
+    loopAdditionalSlides: 1,*/
     effect: "coverflow",
     coverflowEffect: {
-        slideShadows: false,
         rotate: 0, 
-        stretch: 60, /* à*/
         depth: 200, /* 50*/
-        /*modifier: 1 */
+        stretch: 30, /* à*/
+        modifier: 1,
+        scale: 1,
+        slideShadows: false,
     },
   });
 
   swiper.slideNext();
+
+  //Cloud animation
+
+
+// Utilisez addEventListener avec l'option { passive: true } pour une meilleure performance de défilement. TODO 
+// Cloud animation
+let scrolling = false;
+
+window.addEventListener('scroll', function () {
+  if (!scrolling) {
+    scrolling = true;
+    requestAnimationFrame(function () {
+      handleScroll();
+      scrolling = false;
+    });
+  }
+});
+
+function handleScroll() {
+  const bigCloud = document.querySelector('.big-cloud');
+  const littleCloud = document.querySelector('.little-cloud');
+  const placeSection = document.querySelector('#place');
+
+  const sectionOffsetTop = placeSection.offsetTop;
+  const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+  if (scrollPosition >= sectionOffsetTop) {
+    const Parallax = (scrollPosition - sectionOffsetTop) / 4;
+    const translationX = Math.min(Parallax, 300);
+
+    bigCloud.style.transform = 'translateX(' + -translationX + 'px)';
+    littleCloud.style.transform = 'translateX(' + -translationX + 'px)';
+  }
+}
+
