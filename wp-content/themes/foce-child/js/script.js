@@ -1,40 +1,40 @@
 // Fade In for all sections 
 
 const sectionApparitionObserver = new IntersectionObserver(function (entries, observer) {
-    entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('fadeIn');
+  entries.forEach(function (entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('fadeIn');
 
-            // Apparition effect for title section
-            
-            const titleSection = entry.target.querySelector('h2, h3');
+        // Apparition effect for title section    
+      const titleSection = entry.target.querySelector('h2, h3');
 
-            if (titleSection && titleSection.textContent) {
-                const words = titleSection.textContent.split(' ');
-                titleSection.textContent = ' ';
+        if (titleSection && titleSection.textContent) {
+          const words = titleSection.textContent.split(' ');
+          titleSection.textContent = ' ';
 
-                words.forEach((word) => {
-                    const span = document.createElement('span');
-                    span.classList.add('titleSectionAnimation');
-                    span.textContent = word;
-                    titleSection.appendChild(span);
-                });
+          words.forEach((word) => {
+            const span = document.createElement('span');
+            span.classList.add('titleSectionAnimation');
+            span.textContent = word;
+            titleSection.appendChild(span);
+          });
 
-                const spans = titleSection.querySelectorAll('.titleSectionAnimation');
+          const spans = titleSection.querySelectorAll('.titleSectionAnimation');
 
-                spans.forEach((span, index) => {
-                    const delay = (index === 0) ? 400 : index * 600;
-
-                    setTimeout(function () {
-                        span.classList.add('visibility');
-                    }, delay);
-                });
-            }
-            observer.unobserve(entry.target);
+          spans.forEach((span, index) => {
+            const delay = (index === 0) ? 400 : index * 600;
+            setTimeout(function () {
+              span.classList.add('visibility');
+            }, 
+              delay);
+          });
         }
-    });
-}, {
-    rootMargin: '-100px 0px -100px 0px'
+      observer.unobserve(entry.target);
+    }
+  });
+}, 
+{
+  rootMargin: '-100px 0px -100px 0px'
 });
 
 const sections = document.querySelectorAll('.story, #characters, #place, #studio, footer');
@@ -59,36 +59,34 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Swiper js with coverflow for characters presentation TODO à compléter
   const swiper = new Swiper('.swiper', {
-    speed: 500,
+    speed: 1000,
     spaceBetween: 100,
     direction: 'horizontal',
     centeredSlides: true,
     slidesPerView: "auto",
     autoplay: {
-        delay: 5000, /*duration betwenn each slide*/
-        disableOnInteraction: false,
+      delay: 5000, /*duration betwenn each slide*/
+      disableOnInteraction: false,
     },
     loop: true,
     /*loopedSlides: 2,
     loopAdditionalSlides: 1,*/
     effect: "coverflow",
     coverflowEffect: {
-        rotate: 0, 
-        depth: 200, /* 50*/
-        stretch: 30, /* à*/
-        modifier: 1,
-        scale: 1,
-        slideShadows: false,
+      rotate: 0, 
+      depth: 200, /* 50*/
+      stretch: 30, /* à*/
+      modifier: 1,
+      scale: 1,
+      slideShadows: false,
     },
   });
 
   swiper.slideNext();
 
-  //Cloud animation
+  //CLOUD ANIMATION 
 
-
-// Utilisez addEventListener avec l'option { passive: true } pour une meilleure performance de défilement. TODO 
-// Cloud animation
+// Utilisez addEventListener avec l'option { passive: true } pour une meilleure performance de défilement. TODO modifier commentaire
 let scrolling = false;
 
 window.addEventListener('scroll', function () {
@@ -119,10 +117,25 @@ function handleScroll() {
 }
 
 // BURGER MENU
+  /* open burger menu on click */
 const burgerMenu = document.querySelector('.navbar-toggle');
 const fullScreenMenu = document.querySelector('.toggle-open');
 
 burgerMenu.addEventListener('click', () => {
     burgerMenu.classList.toggle('active');
     fullScreenMenu.classList.toggle('active');
+});
+
+  /* close burger on click on nav link*/ 
+const navLinks = document.querySelectorAll('.toggle-open li'); // selectionne tout les éléments <li> et les attribut à la variable 'navLinks//
+
+navLinks.forEach(link => {    // boucle qui permet itérer touts les éléments <li> du menu TODO maj commentaires//
+  link.addEventListener('click', () => { 
+    /* document.querySelector('.menu').classList.remove('active'); lorsque l'un des titres du menu est cliqué  cela supprime la class 'is-active' du menu et le cache ensuite */
+    burgerMenu.classList.remove('active'); // ça permet de supprimer également la classe 'active' de l'élément burger et réinitialise l'icone du menu burger
+    fullScreenMenu.classList.remove('active'); // ça permet de supprimer également la classe 'active' de l'élément burger et réinitialise l'icone du menu burger
+    titlesNav.forEach(title => { 
+    title.classList.remove('animes'); // ça supprime ensuite la classe 'animes' de chaque titre pour désactivet l'animation//
+    });
+  });
 });

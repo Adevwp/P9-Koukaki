@@ -206,6 +206,7 @@ h3 {
   display: flex;
   position: fixed;
   width: 1440px;
+  top: 0;
 }
 .main-navigation ul {
   display: flex;
@@ -261,6 +262,7 @@ h3 {
 
 .toggle-open {
   position: fixed;
+  top: 20px;
   width: 1440px;
   height: 100vh;
   background-color: #FFF5E9;
@@ -278,7 +280,7 @@ h3 {
   margin: 0;
   padding: 0;
   text-align: center;
-  margin-top: 210px;
+  margin-top: 100px;
 }
 .toggle-open li {
   font-weight: normal;

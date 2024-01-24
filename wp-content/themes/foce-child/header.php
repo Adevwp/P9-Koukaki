@@ -35,23 +35,21 @@
             </div>
         </nav><!-- #site-navigation -->
             <div class="toggle-open">
-
                 <ul>
-                <img class =".menu-logo" src="<?php echo get_theme_file_uri() . '/assets/images/logo-small.png'; ?>" alt="Logo Toggle Open">
-
+                    <img class =".menu-logo" src="<?php echo get_theme_file_uri() . '/assets/images/logo-small.png'; ?>" alt="Logo Koukaki">
                     <li><a href="#story">Histoire</a></li>
                     <li><a href="#characters">Personnages</a></li>
                     <li><a href="#place">Lieu</a></li>
                     <li><a href="#studio">Studio Koukaki</a></li>
                 </ul>
-            <p>STUDIO KOUKAKI</p>
-<img class ="menu-orchid" src="<?php echo get_theme_file_uri() . '/assets/images/orchid.png'; ?>" alt="Orchid Toggle Open">
-<img class ="menu-flower" src="<?php echo get_theme_file_uri() . '/assets/images/flower.png'; ?>" alt="Flower Toggle Open">
-<img class ="menu-sunflower" src="<?php echo get_theme_file_uri() . '/assets/images/sunflower.png'; ?>" alt="SunFlower  Toggle Open">
-<img class ="menu-random" src="<?php echo get_theme_file_uri() . '/assets/images/random_flower.png'; ?>" alt="RandomFlower Toggle Open">
-<img class ="menu-hibiscus" src="<?php echo get_theme_file_uri() . '/assets/images/Hibiscus.png'; ?>" alt="Hibiscus Toggle Open">
-<img class ="menu-kawaneko" src="<?php echo get_theme_file_uri() . '/assets/images/menu-kawaneko.png'; ?>" alt="The Cat Kawaneko">
-<img class ="menu-onejiiro" src="<?php echo get_theme_file_uri() . '/assets/images/menu-onejiiro.png'; ?>" alt="The Cat Onejiiro">
-<img class ="menu-jaakuna" src="<?php echo get_theme_file_uri() . '/assets/images/menu-jaakuna.png'; ?>" alt="The Cat Jaakuna">
+                <p>STUDIO KOUKAKI</p>
+                <img class ="menu-orchid" src="<?php echo get_theme_file_uri() . '/assets/images/orchid.png'; ?>" alt="Orchid flower">
+                <img class ="menu-flower" src="<?php echo get_theme_file_uri() . '/assets/images/flower.png'; ?>" alt="Simple Flower">
+                <img class ="menu-sunflower" src="<?php echo get_theme_file_uri() . '/assets/images/sunflower.png'; ?>" alt="SunFlower">
+                <img class ="menu-random" src="<?php echo get_theme_file_uri() . '/assets/images/random_flower.png'; ?>" alt="Random Flower">
+                <img class ="menu-hibiscus" src="<?php echo get_theme_file_uri() . '/assets/images/Hibiscus.png'; ?>" alt="Hibiscus Flower">
+                <img class ="menu-kawaneko" src="<?php echo get_theme_file_uri() . '/assets/images/menu-kawaneko.png'; ?>" alt="The Cat Kawaneko">
+                <img class ="menu-onejiiro" src="<?php echo get_theme_file_uri() . '/assets/images/menu-onejiiro.png'; ?>" alt="The Cat Onejiiro">
+                <img class ="menu-jaakuna" src="<?php echo get_theme_file_uri() . '/assets/images/menu-jaakuna.png'; ?>" alt="The Cat Jaakuna">
             </div>
 	</header><!-- #masthead -->
