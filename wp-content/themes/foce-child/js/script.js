@@ -119,11 +119,10 @@ function handleScroll() {
 }
 
 // BURGER MENU
-const burgerMenu = document.querySelector(".burger-menu");
+const burgerMenu = document.querySelector('.navbar-toggle');
+const fullScreenMenu = document.querySelector('.toggle-open');
 
-const fullScreenMenu = document.querySelector(".fullscreen-menu");
-
-burgerMenu.addEventListener("click", () => {
-  burgerMenu.classList.toggle("active");
-  fullScreenMenu.classList.toggle("active");
+burgerMenu.addEventListener('click', () => {
+    burgerMenu.classList.toggle('active');
+    fullScreenMenu.classList.toggle('active');
 });
