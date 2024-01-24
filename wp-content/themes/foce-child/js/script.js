@@ -118,3 +118,12 @@ function handleScroll() {
   }
 }
 
+// BURGER MENU
+const burgerMenu = document.querySelector(".burger-menu");
+
+const fullScreenMenu = document.querySelector(".fullscreen-menu");
+
+burgerMenu.addEventListener("click", () => {
+  burgerMenu.classList.toggle("active");
+  fullScreenMenu.classList.toggle("active");
+});
