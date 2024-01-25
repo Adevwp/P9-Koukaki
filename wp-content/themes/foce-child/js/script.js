@@ -60,16 +60,16 @@ document.addEventListener('DOMContentLoaded', function () {
   // Swiper js with coverflow for characters presentation TODO à compléter
   const swiper = new Swiper('.swiper', {
     speed: 1000,
-    spaceBetween: 100,
+    spaceBetween: 50,
     direction: 'horizontal',
     centeredSlides: true,
     slidesPerView: "auto",
     autoplay: {
-      delay: 5000, /*duration betwenn each slide*/
+      delay: 4000, /*duration betwenn each slide*/
       disableOnInteraction: false,
     },
     loop: true,
-    /*loopedSlides: 2,
+    /*loopedSlides: 1,
     loopAdditionalSlides: 1,*/
     effect: "coverflow",
     coverflowEffect: {
