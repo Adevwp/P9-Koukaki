@@ -64,7 +64,7 @@
 
 .fallback-img {
   position: absolute;
-  top: 350px;
+  top: 200px; /*350 TODO*/
   left: 350px;
   animation: FlotedElement 6s infinite linear;
 }
@@ -181,7 +181,7 @@ h3 {
   height: 122px;
   position: relative;
   top: -400px;
-  left: 930px;
+  left: 730px;
   transform: scaleX(-1) scaleY(-1);
   filter: blur(15px);
   z-index: 1;
@@ -191,7 +191,7 @@ h3 {
   width: 142px;
   height: 55px;
   top: -350px;
-  left: 740px;
+  left: 540px;
   position: relative;
   filter: blur(15px);
 }
@@ -199,34 +199,39 @@ h3 {
 .main-navigation {
   display: flex;
   position: fixed;
-  width: 1440px;
+  width: 100%;
+  max-width: 1440px;
   top: 0;
 }
-.main-navigation ul {
+.main-navigation .site-title {
   display: flex;
   font-weight: bold;
-  margin-left: 550px;
+  align-self: center;
+  margin-left: auto;
 }
 
-.navbar-toggle {
+/* Burger Menu closed */
+.burgermenu {
   width: 40px;
   height: 20px;
   cursor: pointer;
   position: relative;
   margin-top: 30px;
-  margin-left: 400px;
+  margin-left: auto;
+  margin-right: 10px;
 }
-.navbar-toggle span {
+.burgermenu span {
   width: 100%;
   height: 4px;
   background-color: #000;
+  border-radius: 15px;
   display: block;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   transition: background-color 0.5s ease-in-out;
 }
-.navbar-toggle span::before, .navbar-toggle span::after {
+.burgermenu span::before, .burgermenu span::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -234,27 +239,28 @@ h3 {
   background-color: #000;
   transition: transform 0.5s ease-in-out;
 }
-.navbar-toggle span::before {
+.burgermenu span::before {
   transform: translateY(-10px);
 }
-.navbar-toggle span::after {
+.burgermenu span::after {
   transform: translateY(10px);
 }
-.navbar-toggle.active span {
+.burgermenu.active span {
   background-color: transparent !important;
 }
-.navbar-toggle.active span::before {
+.burgermenu.active span::before {
   transform: translateY(0px) rotateZ(45deg);
 }
-.navbar-toggle.active span::after {
+.burgermenu.active span::after {
   transform: translateY(0px) rotateZ(-45deg);
 }
 
+/* Burger Menu Open */
 .site-navigation .site-title {
   position: fixed;
 }
 
-.toggle-open {
+.burgermenu-open {
   position: fixed;
   top: 20px;
   width: 1440px;
@@ -265,39 +271,39 @@ h3 {
   visibility: hidden;
   transition: opacity 0.5s ease-in;
 }
-.toggle-open.active {
+.burgermenu-open.active {
   opacity: 1;
   visibility: visible;
-  animation: toggle-open 1s ease-in-out;
+  animation: menu-open 1s ease-in-out;
 }
-.toggle-open ul {
+.burgermenu-open ul {
   margin: 0;
   padding: 0;
   text-align: center;
   margin-top: 100px;
 }
-.toggle-open li {
+.burgermenu-open li {
   font-weight: normal;
   font-size: 40px;
   line-height: 80px;
   list-style: none;
   margin: 0;
 }
-.toggle-open img {
+.burgermenu-open img {
   margin: auto;
   display: flex;
 }
-.toggle-open a:hover {
+.burgermenu-open a:hover {
   color: black;
   text-shadow: -1px -1px 4px rgba(255, 92, 0, 0.3), 4px -1px 4px rgba(255, 92, 0, 0.3), -1px 4px 4px rgba(255, 92, 0, 0.3), 4px 4px 4px rgba(255, 92, 0, 0.3);
 }
-.toggle-open p {
+.burgermenu-open p {
   text-align: center;
   font-size: 12px;
   margin-top: 70px;
 }
 
-@keyframes toggle-open {
+@keyframes menu-open {
   0% {
     opacity: 0;
   }
@@ -351,7 +357,7 @@ using the same @keyframes from rotating flowers*/
 
 .menu-random {
   top: 285px;
-  left: 1330px;
+  left: 1220px;
   width: 75px;
   height: 75px;
 }

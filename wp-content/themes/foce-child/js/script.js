@@ -44,18 +44,31 @@ for (let i = 0; i < sections.length; i++) {
     sectionApparitionObserver.observe(section);
 }
 
-// Parallax effect on hero header
- /* TODO à retravailler
-document.addEventListener('DOMContentLoaded', function () {
+// Parallax effect on hero header - TODO à retravailler
+
+/*document.addEventListener('DOMContentLoaded', function () {
     const video = document.querySelector('.video-koukaki');
   
     new simpleParallax(video, {
         orientation: 'left',
         scale: 1.2,
         delay: 0.5,
-        transition: 'ease-in-out'
+        transition: 'ease-in-out',
+        trigger: 'scroll'
     });
-  }); */ 
+  }); */
+
+/*  test autre code pour effet de parallaxe*/
+
+/* 
+const video = document.querySelector('.video-koukaki'); //Selectionne l'élément avec la classe "fond-video" et l'attribut à la variable video //
+const logo = document.querySelector('.fallback-img'); // Selectionne l'élément avec la classe
+
+window.addEventListener('scroll', function() {
+    const scrollPosition = window.scrollY;
+    video.style.transform = `translate3d(0, ${scrollPosition * 0.2}px, 0)`;
+    logo.style.transform = `translate3d(0, ${scrollPosition * -0.5}px, 0)`;
+}); */
 
   // Swiper js with coverflow for characters presentation TODO à compléter
   const swiper = new Swiper('.swiper', {
@@ -118,8 +131,8 @@ function handleScroll() {
 
 // BURGER MENU
   /* open burger menu on click */
-const burgerMenu = document.querySelector('.navbar-toggle');
-const fullScreenMenu = document.querySelector('.toggle-open');
+const burgerMenu = document.querySelector('.burgermenu');
+const fullScreenMenu = document.querySelector('.burgermenu-open');
 
 burgerMenu.addEventListener('click', () => {
     burgerMenu.classList.toggle('active');
@@ -127,7 +140,7 @@ burgerMenu.addEventListener('click', () => {
 });
 
   /* close burger on click on nav link*/ 
-const navLinks = document.querySelectorAll('.toggle-open li'); // selectionne tout les éléments <li> et les attribut à la variable 'navLinks//
+const navLinks = document.querySelectorAll('.burgermenu-open li'); // selectionne tout les éléments <li> et les attribut à la variable 'navLinks//
 
 navLinks.forEach(link => {    // boucle qui permet itérer touts les éléments <li> du menu TODO maj commentaires//
   link.addEventListener('click', () => { 
