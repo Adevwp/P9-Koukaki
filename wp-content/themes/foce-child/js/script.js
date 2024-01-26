@@ -80,67 +80,63 @@ window.addEventListener('scroll', function() {
 
   // SWIPER JS COVERFLOW CHARACTERS ARTICLE
   
-  /* presentation TODO à compléter */ 
+const swiper = new Swiper('.swiper', {
+  speed: 1500,
+  spaceBetween: 50,
+  direction: 'horizontal',
+  centeredSlides: true,
+  slidesPerView: "auto",
+  autoplay: {
+    delay: 4500, /*duration betwenn each slide*/
+    disableOnInteraction: false,
+  },
+  loop: true,
+  effect: "coverflow",
+  coverflowEffect: {
+    rotate: 0,  /* Slide rotation angle in degrees */
+    depth: 150, /* Perspective depth for coverflow effect */
+    stretch: 10, /* Stretching slides during coverflow effect */
+    slideShadows: false, /* Whether or not to display slide shadows */
+  },
+});
 
-  const swiper = new Swiper('.swiper', {
-    speed: 1000,
-    spaceBetween: 50,
-    direction: 'horizontal',
-    centeredSlides: true,
-    slidesPerView: "auto",
-    autoplay: {
-      delay: 4000, /*duration betwenn each slide*/
-      disableOnInteraction: false,
-    },
-    loop: true,
-    /*loopedSlides: 1,
-    loopAdditionalSlides: 1,*/
-    effect: "coverflow",
-    coverflowEffect: {
-      rotate: 0, 
-      depth: 200, /* 50*/
-      stretch: 30, /* à*/
-      modifier: 1,
-      scale: 1,
-      slideShadows: false,
-    },
-  });
-
-  swiper.slideNext();
+swiper.slideNext();
 
   //CLOUD ANIMATION 
 
-// Utilisez addEventListener avec l'option { passive: true } pour une meilleure performance de défilement. TODO modifier commentaire
-let scrolling = false;
+let scrolling = false; /* creation of the variable scrolling wich can evoluate */
 
-window.addEventListener('scroll', function () {
+window.addEventListener('scroll', function () { /* add an event listener on the action of scroll */
   if (!scrolling) {
-    scrolling = true;
+    scrolling = true; /* change the value of scrolling */
     requestAnimationFrame(function () {
-      handleScroll();
-      scrolling = false;
+      parallaxCloudsOnScroll(); /* using function parallaxCloudsOnScroll*/  
+      scrolling = false; /* change the value of scrolling to indicate that the scroll is ended */
     });
   }
 });
 
-function handleScroll() {
-  const bigCloud = document.querySelector('.big-cloud');
+function parallaxCloudsOnScroll() { /*defining the function */ 
+  /* select the three elements of the article place */
+  const bigCloud = document.querySelector('.big-cloud'); 
   const littleCloud = document.querySelector('.little-cloud');
   const placeSection = document.querySelector('#place');
 
-  const sectionOffsetTop = placeSection.offsetTop;
-  const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+  const sectionOffsetTop = placeSection.offsetTop; /* position of the section from the top pf the page*/
+  const scrollPosition = window.scrollY || document.documentElement.scrollTop; /* to see the actual position of scroll on the window */
 
-  if (scrollPosition >= sectionOffsetTop) {
-    const Parallax = (scrollPosition - sectionOffsetTop) / 4;
-    const translationX = Math.min(Parallax, 300);
+  if (scrollPosition >= sectionOffsetTop) { /* verify if the position of scroll is above the place section */
+    const Parallax = (scrollPosition - sectionOffsetTop) / 4; /* calculate parallax value in terms of the position of scroll  */
+    const translationX = Math.min(Parallax, 300); /* limit the value of parallax at max 300 from it position*/
 
+    /* apply the transformation to clouds in term of the position of scroll */
     bigCloud.style.transform = 'translateX(' + -translationX + 'px)';
     littleCloud.style.transform = 'translateX(' + -translationX + 'px)';
   }
 }
 
 // BURGER MENU
+
   /* open burger menu on click */
 const burgerMenu = document.querySelector('.burgermenu');
 const fullScreenMenu = document.querySelector('.burgermenu-open');
@@ -151,15 +147,12 @@ burgerMenu.addEventListener('click', () => {
 });
 
   /* close burger on click on nav link*/ 
-const navLinks = document.querySelectorAll('.burgermenu-open li'); // selectionne tout les éléments <li> et les attribut à la variable 'navLinks//
+const navLinks = document.querySelectorAll('.burgermenu-open li'); /* creation of variable navLinks */ 
 
-navLinks.forEach(link => {    // boucle qui permet itérer touts les éléments <li> du menu TODO maj commentaires//
-  link.addEventListener('click', () => { 
-    /* document.querySelector('.menu').classList.remove('active'); lorsque l'un des titres du menu est cliqué  cela supprime la class 'is-active' du menu et le cache ensuite */
-    burgerMenu.classList.remove('active'); // ça permet de supprimer également la classe 'active' de l'élément burger et réinitialise l'icone du menu burger
-    fullScreenMenu.classList.remove('active'); // ça permet de supprimer également la classe 'active' de l'élément burger et réinitialise l'icone du menu burger
-    titlesNav.forEach(title => { 
-    title.classList.remove('animes'); // ça supprime ensuite la classe 'animes' de chaque titre pour désactivet l'animation//
+navLinks.forEach(link => {    // loop for all li 
+  link.addEventListener('click', () => { /* action of click on a li will : */ 
+    burgerMenu.classList.remove('active'); /* delete active class to .burgermenu and below on .burgermenu-open in order to close the fullscreen menu  */ 
+    fullScreenMenu.classList.remove('active'); 
     });
-  });
 });
+
