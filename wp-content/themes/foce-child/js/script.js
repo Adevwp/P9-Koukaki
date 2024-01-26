@@ -60,9 +60,9 @@ for (let i = 0; i < sections.length; i++) {
 
 /*  test autre code pour effet de parallaxe*/
 
-/* 
-const video = document.querySelector('.video-koukaki'); //Selectionne l'élément avec la classe "fond-video" et l'attribut à la variable video //
-const logo = document.querySelector('.fallback-img'); // Selectionne l'élément avec la classe
+
+/* const video = document.querySelector('.video-koukaki'); //Selectionne l'élément avec la classe "fond-video" et l'attribut à la variable video //
+const logo = document.querySelector('.heroheader-logo'); // Selectionne l'élément avec la classe
 
 window.addEventListener('scroll', function() {
     const scrollPosition = window.scrollY;
@@ -70,7 +70,18 @@ window.addEventListener('scroll', function() {
     logo.style.transform = `translate3d(0, ${scrollPosition * -0.5}px, 0)`;
 }); */
 
-  // Swiper js with coverflow for characters presentation TODO à compléter
+
+
+
+
+
+
+
+
+  // SWIPER JS COVERFLOW CHARACTERS ARTICLE
+  
+  /* presentation TODO à compléter */ 
+
   const swiper = new Swiper('.swiper', {
     speed: 1000,
     spaceBetween: 50,

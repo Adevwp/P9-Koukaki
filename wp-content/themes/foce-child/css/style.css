@@ -25,7 +25,7 @@
   transform: translateY(0);
 }
 
-/* Rotating flowers */
+/* select all the flower from the style.css parent theme */
 .site-footer::after,
 .site-footer ul::after,
 .site-footer::before,
@@ -33,14 +33,15 @@
 .story h2::after,
 #studio h2::before,
 #studio h2::after {
-  animation: rotate 20s infinite linear;
+  animation: rotate 20s infinite linear; /* 20s for the complete rotation in infinite duration */
 }
 
-.story h2::after {
+.story h2::after { /* change size of the flower for center with her stem */
   width: 155px;
   height: 155px;
 }
 
+/* use keyframe to define stepf of animation rotate from 0 to 360 for a complete rotation */
 @keyframes rotate {
   from {
     transform: rotate(0deg);
@@ -49,7 +50,6 @@
     transform: rotate(360deg);
   }
 }
-/* Hero header customize */
 .hero-header {
   height: 806px;
   overflow: hidden;
@@ -62,34 +62,35 @@
   width: 100%;
 }
 
-.fallback-img {
+.heroheader-logo {
   position: absolute;
   top: 200px; /*350 TODO*/
   left: 350px;
-  animation: FlotedElement 6s infinite linear;
+  animation: FlotedElement 8s infinite linear;
 }
 
 @keyframes FlotedElement {
   0% {
-    transform: translateY(0%);
+    transform: translate(0%, 0%);
   }
   50% {
-    transform: translateY(20%);
+    transform: translate(8%, 5%);
   }
   100% {
-    transform: translateY(0%);
+    transform: translate(0%, 0%);
   }
 }
+/* Fallback image for mobile and loading time */
 @media (max-width: 767px) {
-  .fallback-img .video-koukaki {
+  .heroheader-logo .video-koukaki {
     display: none;
   }
-  .fallback-img .fallback-img {
+  .heroheader-logo .heroheader-logo {
     display: block;
     position: relative;
     margin: auto;
   }
-  .fallback-img .banner img {
+  .heroheader-logo .banner img {
     width: 70%;
   }
 }
@@ -99,7 +100,6 @@
     background-image: none;
   }
 }
-/* Oscars section */
 #oscars {
   display: flex;
   width: 965px;
@@ -315,6 +315,7 @@ a {
   text-decoration: none;
 }
 
+/* Position of fullscreen menu's images */
 .menu-logo {
   position: absolute;
   left: 640px;

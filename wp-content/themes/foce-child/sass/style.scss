@@ -32,9 +32,9 @@
   }
 }
 
-/* Rotating flowers */
+// ROTATING FLOWERS
    
-  // select all the flower from the style.css parent theme
+  /* select all the flower from the style.css parent theme */
 .site-footer::after,
 .site-footer ul::after,
 .site-footer::before,
@@ -42,15 +42,15 @@
 .story h2::after,
 #studio h2::before,
 #studio h2::after {
-  animation: rotate 20s infinite linear; // 20s for the complete rotation in infinite duration
+  animation: rotate 20s infinite linear; /* 20s for the complete rotation in infinite duration */
 }
 
-.story h2::after { // change size of the flower for center with her stem
+.story h2::after { /* change size of the flower for center with her stem */
   width: 155px;
   height: 155px;
 } 
 
- // use keyframe to define stepf of animation rotate from 0 to 360 for a complete rotation
+  /* use keyframe to define stepf of animation rotate from 0 to 360 for a complete rotation */
  @keyframes rotate {
   from {
     transform: rotate(0deg);
@@ -60,7 +60,7 @@
     }
 }
 
-/* Hero header customize */
+// HERO HEADER CUSTOMIZE 
 
 .hero-header {
   video {
@@ -75,33 +75,33 @@
 width: 100%;
 }
 
-.fallback-img {
-  position: absolute;
+.heroheader-logo {
+  position: absolute; 
   top: 200px; /*350 TODO*/
   left: 350px;
-  animation: FlotedElement 6s infinite linear;
+  animation: FlotedElement 8s infinite linear;
 }
 
 @keyframes FlotedElement {
   0% {
-    transform: translateY(0%);
+    transform: translate(0%, 0%);
   }
   50% {
-    transform: translateY(20%);
+    transform: translate(8%, 5%);
   }
   100% {
-    transform: translateY(0%);
+    transform: translate(0%, 0%);
   }
 }
  
-  // Fallback image for mobile and loading time
-.fallback-img {
+  /* Fallback image for mobile and loading time */
+.heroheader-logo {
   @media (max-width: 767px) {
   .video-koukaki {
     display: none;
   }
 
-  .fallback-img {
+  .heroheader-logo{
     display: block;
     position: relative;
     margin: auto;
@@ -119,7 +119,7 @@ width: 100%;
 }
 }
 
-/* Oscars section */
+// OSCARS SECTION 
 #oscars {
   display: flex;
   width: 965px;
@@ -191,7 +191,7 @@ h3 {
 
 
 
-//Clouds 
+// CLOUDS 
 
 .story #place {
   background-image: url("../assets/images/cloud-background.png");
@@ -229,6 +229,7 @@ h3 {
 }
 
 // BURGER MENU
+
 .main-navigation {
   display: flex;
   position: fixed;
@@ -370,7 +371,7 @@ a {
   text-decoration: none;
 }
 
-//Position of fullscreen menu's images 
+  /* Position of fullscreen menu's images */
 
 .menu-logo {
   position: absolute;
