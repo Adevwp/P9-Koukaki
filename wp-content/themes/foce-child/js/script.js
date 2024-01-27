@@ -87,7 +87,7 @@ const swiper = new Swiper('.swiper', {
   centeredSlides: true,
   slidesPerView: "auto",
   autoplay: {
-    delay: 4500, /*duration betwenn each slide*/
+    delay: 3500, /*duration betwenn each slide*/
     disableOnInteraction: false,
   },
   loop: true,

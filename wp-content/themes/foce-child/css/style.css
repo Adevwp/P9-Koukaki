@@ -81,30 +81,30 @@
   }
 }
 /* Fallback image for mobile and loading time */
-@media (max-width: 767px) {
-  .heroheader-logo .video-koukaki {
-    display: none;
-  }
-  .heroheader-logo .heroheader-logo {
-    display: block;
-    position: relative;
-    margin: auto;
-  }
-  .heroheader-logo .banner img {
-    width: 70%;
-  }
+.heroheader-logo {
+  display: block;
+  position: relative;
+  margin: auto;
 }
 
-@media (min-width: 768px) {
-  .banner {
-    background-image: none;
-  }
+.banner img {
+  width: 70%;
 }
+
+.site-footer {
+  flex-direction: column;
+}
+
+.site-footer::after {
+  bottom: 42em;
+}
+
 #oscars {
   display: flex;
+  justify-content: center;
   width: 965px;
   margin-left: 200px;
-  margin-bottom: 160px;
+  margin-bottom: 250px;
 }
 #oscars img {
   margin-top: 50px;
@@ -112,11 +112,16 @@
   height: 129px;
 }
 
-h2.oscars-title {
-  font-size: 2.2rem;
-  padding: 1.8em 2em;
-  background-image: url(../assets/images/oscar-title-background.png);
+P.oscars-title {
+  font-size: 42px;
+  font-weight: 700;
+  font-family: "Quicksand", sans-serif;
+  color: #FFF5E9;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 29px 34px 32px 40px;
+  margin-bottom: 0;
+  text-align: left;
+  background: url(../assets/images/oscar-title-background.png) center/cover no-repeat;
 }
 
 #characters {
@@ -400,6 +405,54 @@ using the same @keyrframe from the floating logo*/
   left: 950px;
   width: 135px;
   height: 128px;
+}
+
+/* Mobiles */
+@media screen and (max-width: 767px) {
+  /*Menu*/
+  .main-navigation {
+    min-height: 70px;
+    max-width: 600px;
+  }
+  .burgermenu-open {
+    max-width: 600px;
+  }
+  /* Hero header*/
+  .video-koukaki {
+    display: none;
+  }
+  .banner {
+    width: auto;
+    min-height: 650px;
+  }
+  .heroheader-logo {
+    top: 20px;
+    left: 50px;
+    max-height: 350px;
+  }
+  /*No animation in the fullscreen menu*/
+  .menu-sunflower,
+  .menu-hibiscus,
+  .menu-flower,
+  .menu-orchid,
+  .menu-random,
+  .menu-jaakuna,
+  .menu-kawaneko,
+  .menu-onejiiro {
+    visibility: hidden;
+  }
+}
+/* Tablets */
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .banner {
+    background-image: none;
+  }
+}
+/* Desktop */
+@media screen and (min-width: 993px) {
+  .banner {
+    background-image: none;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
