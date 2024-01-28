@@ -12,7 +12,7 @@
 ?>
 
 	<footer id="colophon" class="site-footer">
-            <!-- Nomination section -->
+        <!-- Nomination section -->
         <?php get_template_part('template-parts/oscars'); ?>
 
         <!-- Footer text -->
