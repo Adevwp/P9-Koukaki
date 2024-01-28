@@ -1,4 +1,3 @@
-/* scroll fade in section */
 .fadeIn {
   animation: slidein 1s ease-in;
 }
@@ -50,11 +49,11 @@
     transform: rotate(360deg);
   }
 }
-.hero-header {
+ORIGINAL .hero-header {
   height: 806px;
   overflow: hidden;
 }
-.hero-header video {
+ORIGINAL .hero-header video {
   position: relative;
 }
 
@@ -63,10 +62,16 @@
 }
 
 .heroheader-logo {
+  display: block;
   position: absolute;
-  top: 200px; /*350 TODO*/
+  margin: auto;
+  top: 200px;
   left: 350px;
   animation: FlotedElement 8s infinite linear;
+}
+
+.banner {
+  background-image: none;
 }
 
 @keyframes FlotedElement {
@@ -80,17 +85,6 @@
     transform: translate(0%, 0%);
   }
 }
-/* Fallback image for mobile and loading time */
-.heroheader-logo {
-  display: block;
-  position: relative;
-  margin: auto;
-}
-
-.banner img {
-  width: 70%;
-}
-
 .site-footer {
   flex-direction: column;
 }
@@ -112,16 +106,22 @@
   height: 129px;
 }
 
-P.oscars-title {
-  font-size: 42px;
+.oscars-title {
+  display: flex;
+  background: url(../assets/images/oscar-title-background.png) center/cover no-repeat;
+  background-color: transparent;
+}
+.oscars-title h2 {
+  background: none;
+  margin-bottom: 0;
+  margin-top: 2px;
+  font-size: 36px;
   font-weight: 700;
   font-family: "Quicksand", sans-serif;
   color: #FFF5E9;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  padding: 29px 34px 32px 40px;
-  margin-bottom: 0;
+  padding: 29px 34px 32px 44px;
   text-align: left;
-  background: url(../assets/images/oscar-title-background.png) center/cover no-repeat;
 }
 
 #characters {
@@ -160,14 +160,6 @@ h3 {
   text-align: left;
 }
 
-/*
-@media screen and (max-width: 699px) {
-  .swiper {
-      width: auto;
-      margin-left: -59.5em !important;
-      margin-right: -55em !important;
-      }
-}*/
 .story #place {
   background-image: url("../assets/images/cloud-background.png");
   position: relative;
@@ -422,10 +414,11 @@ using the same @keyrframe from the floating logo*/
     display: none;
   }
   .banner {
+    background-image: url("../assets/images/banner.png");
     width: auto;
-    min-height: 650px;
   }
   .heroheader-logo {
+    position: relative;
     top: 20px;
     left: 50px;
     max-height: 350px;
@@ -441,17 +434,56 @@ using the same @keyrframe from the floating logo*/
   .menu-onejiiro {
     visibility: hidden;
   }
-}
-/* Tablets */
-@media screen and (min-width: 768px) and (max-width: 992px) {
-  .banner {
-    background-image: none;
+  /*Swiper js */
+  .story #characters div {
+    flex: 1 0 auto;
+  }
+  .swiper .swiper-slide img {
+    width: 70%;
+  }
+  /* Clouds */
+  .big-cloud {
+    top: -400px;
+    left: 490px;
+    width: 30%;
+    height: 30%;
+  }
+  .little-cloud {
+    top: -380px;
+    left: 420px;
+    width: 30%;
+    height: 30%;
+  }
+  /* Nomination section */
+  #oscars {
+    flex-direction: column;
+    width: 500px;
+    margin-left: 50px;
+  }
+  #oscars img {
+    margin-left: 50px;
+  }
+  .oscars-title h2 {
+    font-size: 22px;
+    padding-left: 55px;
+  }
+  .site-footer {
+    padding-top: 10em;
   }
 }
-/* Desktop */
-@media screen and (min-width: 993px) {
-  .banner {
-    background-image: none;
+/* Tablets */
+@media screen and (min-width: 768px) and (max-width: 1040px) {
+  /*max-width 1040 because of swiper js*/
+  /* Burger Menu*/
+  .burgermenu-open {
+    max-width: 1040px;
+  }
+  /*Swiper js */
+  .story #characters div {
+    flex: 1 0 auto;
+  }
+  .swiper .swiper-slide img {
+    width: 80%;
   }
 }
 

@@ -5,7 +5,7 @@ const sectionApparitionObserver = new IntersectionObserver(function (entries, ob
     if (entry.isIntersecting) {
       entry.target.classList.add('fadeIn');
 
-        // Apparition effect for title section    
+        /* Apparition effect for title section */  
       const titleSection = entry.target.querySelector('h2, h3');
 
         if (titleSection && titleSection.textContent) {
@@ -40,43 +40,27 @@ const sectionApparitionObserver = new IntersectionObserver(function (entries, ob
 const sections = document.querySelectorAll('.story, #characters, #place, #studio, footer');
 
 for (let i = 0; i < sections.length; i++) {
-    const section = sections[i];
-    sectionApparitionObserver.observe(section);
+  const section = sections[i];
+  sectionApparitionObserver.observe(section);
 }
 
-// Parallax effect on hero header - TODO à retravailler
+// PARALLAX EFFECT HERO HEADER
 
-/*document.addEventListener('DOMContentLoaded', function () {
-    const video = document.querySelector('.video-koukaki');
-  
-    new simpleParallax(video, {
-        orientation: 'left',
-        scale: 1.2,
-        delay: 0.5,
-        transition: 'ease-in-out',
-        trigger: 'scroll'
-    });
-  }); */
+function parallaxScroll() {
+  const bannerSection = document.querySelector('.banner');
+  const video = document.querySelector('.video-koukaki');
+    
+  const scrollPosition = window.scrollY;
+  const bannerPosition = bannerSection.offsetTop;
+  const speed = 0.5; /* speed of scroll */
 
-/*  test autre code pour effet de parallaxe*/
+  /* vertical move  of video*/ 
+  const videoOffset = -(scrollPosition - bannerPosition) * (speed * 0.8);
+  video.style.transform = `translateY(${videoOffset}px)`;  
+}
 
-
-/* const video = document.querySelector('.video-koukaki'); //Selectionne l'élément avec la classe "fond-video" et l'attribut à la variable video //
-const logo = document.querySelector('.heroheader-logo'); // Selectionne l'élément avec la classe
-
-window.addEventListener('scroll', function() {
-    const scrollPosition = window.scrollY;
-    video.style.transform = `translate3d(0, ${scrollPosition * 0.2}px, 0)`;
-    logo.style.transform = `translate3d(0, ${scrollPosition * -0.5}px, 0)`;
-}); */
-
-
-
-
-
-
-
-
+  /* use event lisetenet on scroll to activate the function */ 
+window.addEventListener('scroll', parallaxScroll);
 
   // SWIPER JS COVERFLOW CHARACTERS ARTICLE
   

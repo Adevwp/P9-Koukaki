@@ -44,7 +44,7 @@
                 <li><a href="#studio">Studio Koukaki</a></li> 
             </ul>
             <p>STUDIO KOUKAKI</p>
-</div>
+
             <img class ="menu-orchid" src="<?php echo get_theme_file_uri() . '/assets/images/orchid.png'; ?>" alt="Orchid flower">
             <img class ="menu-flower" src="<?php echo get_theme_file_uri() . '/assets/images/flower.png'; ?>" alt="Simple Flower">
             <img class ="menu-sunflower" src="<?php echo get_theme_file_uri() . '/assets/images/sunflower.png'; ?>" alt="SunFlower">

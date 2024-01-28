@@ -1,7 +1,4 @@
-
-/* scroll fade in section */
-
-// Sections and title fade in
+// SECTIONS FADE IN AND TITLE ANIMATIOn
 
 .fadeIn {
   animation: slidein 1s ease-in;
@@ -51,7 +48,7 @@
 } 
 
   /* use keyframe to define stepf of animation rotate from 0 to 360 for a complete rotation */
- @keyframes rotate {
+@keyframes rotate {
   from {
     transform: rotate(0deg);
     }
@@ -61,7 +58,7 @@
 }
 
 // HERO HEADER CUSTOMIZE 
-
+ORIGINAL 
 .hero-header {
   video {
     position: relative;
@@ -76,11 +73,17 @@ width: 100%;
 }
 
 .heroheader-logo {
+  display: block;
   position: absolute; 
-  top: 200px; /*350 TODO*/
+  margin: auto;
+  top: 200px; 
   left: 350px;
   animation: FlotedElement 8s infinite linear;
 }
+
+.banner {
+  background-image: none;  }
+
 
 @keyframes FlotedElement {
   0% {
@@ -92,22 +95,12 @@ width: 100%;
   100% {
     transform: translate(0%, 0%);
   }
-}
- 
-  /* Fallback image for mobile and loading time */
+} 
 
-  .heroheader-logo{
-    display: block;
-    position: relative;
-    margin: auto;
-  }
-
-  .banner img {
-    width: 70%;
-  }
 
 
 // FOOTER
+
 .site-footer {
   flex-direction: column;
 }
@@ -116,7 +109,8 @@ width: 100%;
   bottom: 42em;
 }
 
-// OSCARS SECTION 
+// NOMINATION SECTION
+
 #oscars {
   display: flex;
   justify-content: center;
@@ -129,22 +123,28 @@ width: 100%;
     width: 278px;
     height: 129px;
     }
-  }
-
-P.oscars-title {
-  font-size: 42px;
-  font-weight: 700;
-  font-family: "Quicksand", sans-serif;
-  color: #FFF5E9;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  padding: 29px 34px 32px 40px;
-  margin-bottom: 0;
-  text-align: left;
-  background: url(../assets/images/oscar-title-background.png) center/cover no-repeat;
 }
 
+.oscars-title {
+  display: flex;
+  background: url(../assets/images/oscar-title-background.png) center/cover no-repeat;
+  background-color: transparent;
+  
+  h2 {
+    background: none;
+    margin-bottom: 0;
+    margin-top: 2px;
+    font-size: 36px;
+    font-weight: 700;
+    font-family: "Quicksand", sans-serif;
+    color: #FFF5E9;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 29px 34px 32px 44px;
+    text-align: left;
+  }
+}
 
-// Swiper for characters slide TODO
+// SWIPER FOR CHARACTERS SLIDE 
 
 #characters {
   width: 100%;
@@ -183,16 +183,6 @@ h3 {
   background-position: left;
   text-align: left;
 }
-/*
-@media screen and (max-width: 699px) {
-  .swiper {
-      width: auto;
-      margin-left: -59.5em !important;
-      margin-right: -55em !important;
-      }
-}*/
-
-
 
 // CLOUDS 
 
@@ -249,7 +239,6 @@ h3 {
 }
 
   /* Burger Menu closed */
-
 .burgermenu {
   width: 40px;
   height: 20px;
@@ -375,7 +364,6 @@ a {
 }
 
   /* Position of fullscreen menu's images */
-
 .menu-logo {
   position: absolute;
   left: 640px;
@@ -385,7 +373,6 @@ a {
 }
   /* rotation and position menu's flowers 
   using the same @keyframes from rotating flowers*/
-
 .menu-sunflower,
 .menu-hibiscus,
 .menu-flower,
@@ -463,10 +450,10 @@ a {
 }
 
 // MEDIA QUERIES
+
   /* Mobiles */
-    
 @media screen and (max-width: 767px) {
-  
+
   /*Menu*/
   .main-navigation {
     min-height: 70px;
@@ -483,11 +470,12 @@ a {
   }
 
   .banner {
-    width: auto;  
-    min-height: 650px; 
+    background-image: url("../assets/images/banner.png");
+    width: auto; 
   }
 
   .heroheader-logo {
+    position: relative;
     top: 20px;
     left: 50px;
     max-height: 350px;
@@ -504,20 +492,67 @@ a {
   .menu-onejiiro {
     visibility:hidden;
   }
-}
 
-  /* Tablets */
+  /*Swiper js */
+  .story #characters div {
+    flex: 1 0 auto; 
+  }
 
-@media screen and (min-width: 768px) and (max-width: 992px) {
-  .banner {
-    background-image: none;
+  .swiper .swiper-slide img{
+    width: 70%;
+  }
+
+  /* Clouds */
+  .big-cloud {
+    top: -400px;
+    left: 490px;
+    width: 30%;
+    height: 30%;
+  }
+  
+  .little-cloud {
+    top: -380px;
+    left: 420px;
+    width: 30%;
+    height: 30%;
+  }
+
+  /* Nomination section */
+  #oscars {
+    flex-direction: column;
+    width: 500px;
+    margin-left: 50px;
+    img {
+      margin-left: 50px;
+    }
+  }
+  
+  .oscars-title {
+    h2 {
+      font-size: 22px;
+      padding-left: 55px; 
+    }
+  }
+  
+  .site-footer {
+    padding-top: 10em;
   }
 }
 
- /* Desktop */
- 
- @media screen and (min-width: 993px)  {
-  .banner {
-    background-image: none;
+  /* Tablets */
+@media screen and (min-width: 768px) and (max-width: 1040px) {
+  /*max-width 1040 because of swiper js*/
+  /* Burger Menu*/
+  .burgermenu-open {
+    max-width: 1040px;
+  }
+
+  /*Swiper js */
+  .story #characters div {
+    flex: 1 0 auto; 
+  }
+
+  .swiper .swiper-slide img{
+    width: 80%;
   }
 }
